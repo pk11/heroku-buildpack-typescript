@@ -45,7 +45,7 @@ Example usage:
     -----> Launching... done, v173
     ...
 
-The buildpack will detect your app as Typescript if it detects a file matching `*.ts` in your project root.  It will use NPM to install your dependencies, and vendors a version of the Node.js runtime into your slug.  The `node_modules` directory will be cached between builds to allow for faster NPM install time.
+The buildpack will detect your app as Typescript if it detects a file matching `*.ts` in your project root.  It will use NPM to install your dependencies, and vendors a version of the Node.js runtime into your slug.  
 
 You must include Typescript in your `package.json`. The buildpack does not install Typescript automatically in order to allow you to specify your own Typescript version.
 

@@ -135,10 +135,6 @@ echo "Using Node.js version: ${NODE_VERSION}" | indent
 NPM_VERSION=$(package_resolve_version "npm")
 echo "Using npm version: ${NPM_VERSION}" | indent
 
-# cache directories
-CACHE_STORE_DIR="$CACHE_DIR/node_modules/$NODE_VERSION/$NPM_VERSION"
-CACHE_TARGET_DIR="$BUILD_DIR/node_modules"
-
 # s3 packages
 NODE_PACKAGE="http://${S3_BUCKET}.s3.amazonaws.com/nodejs-${NODE_VERSION}.tgz"
 NPM_PACKAGE="http://${S3_BUCKET}.s3.amazonaws.com/npm-${NPM_VERSION}.tgz"
