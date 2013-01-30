@@ -1,7 +1,7 @@
 Heroku buildpack: Coffeescript
 ==============================
 
-This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks) for [Coffeescript](http://coffeescript.org/) apps. It uses [NPM](http://npmjs.org/) and [SCons](http://www.scons.org/). It is based on the [Heroku Node.js buildpack](https://github.com/heroku/heroku-buildpack-nodejs).
+This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks) for [Typescript](http://www.typescriptlang.org/) apps. It uses [NPM](http://npmjs.org/) and [SCons](http://www.scons.org/). It is based on the [Heroku Node.js buildpack](https://github.com/heroku/heroku-buildpack-nodejs).
 
 Usage
 -----
@@ -14,7 +14,7 @@ Example usage:
     $ ls src
     app.coffee
 
-    $ heroku create --stack cedar --buildpack https://github.com/aergonaut/heroku-buildpack-coffeescript.git
+    $ heroku create --stack cedar --buildpack https://github.com/pk11/heroku-buildpack-typescript.git
 
     $ git push heroku master
     ...
@@ -46,13 +46,11 @@ Example usage:
     -----> Building runtime environment
     ...
 
-The buildpack will detect your app as Coffeescript if it detects a file matching `src/*.coffee` in your project root.  It will use NPM to install your dependencies, and vendors a version of the Node.js runtime into your slug.  The `node_modules` directory will be cached between builds to allow for faster NPM install time.
+The buildpack will detect your app as Typescript if it detects a file matching `*.ts` in your project root.  It will use NPM to install your dependencies, and vendors a version of the Node.js runtime into your slug.  The `node_modules` directory will be cached between builds to allow for faster NPM install time.
 
-You must include Coffeescript in your `package.json`. The buildpack does not install Coffeescript automatically in order to allow you to specify your own Coffeescript version.
+You must include Typescript in your `package.json`. The buildpack does not install Typescript automatically in order to allow you to specify your own Typescript version.
 
-Compiled javascript is written to the `target` directory in the slug. Your `Procfile` should reference these compiled files like so:
-
-    web: node target/app.js
+Compiled javascript is written to the `ts` directory in the slug. 
 
 Node.js and npm versions
 ------------------------
