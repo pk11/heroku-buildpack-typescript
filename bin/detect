@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# bin/detect <build-dir>
+
+detect_typescript() {
+  local ctxDir=$1
+  test -d $ctxDir && test -n "$(find $ctxDir -maxdepth 1 -name '*.ts' -print -quit)"
+}
+
+if detect_typescript $1 ; then
+  echo "Typescript" && exit 0
+else
+  echo "no" && exit 1
+fi
