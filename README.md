@@ -9,10 +9,7 @@ Usage
 Example usage:
 
     $ ls
-    Procfile  package.json  src
-
-    $ ls src
-    app.coffee
+    Procfile  package.json  app.ts
 
     $ heroku create --stack cedar --buildpack https://github.com/pk11/heroku-buildpack-typescript.git
 
