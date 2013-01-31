@@ -174,7 +174,7 @@ echo "-----> Compiling typescript source"
 mkdir -p $BUILD_DIR/ts
 #compile tsc files  
 
-$CACHE_TARGET_DIR/typescript/bin/tsc --out $BUILD_DIR/ts `find . -name "*.ts" -maxdepth 5 | grep -v node_modules | grep -v ".d.ts"`
+$BUILD_DIR/node_modules/typescript/bin/tsc --out $BUILD_DIR/ts `find . -name "*.ts" -maxdepth 5 | grep -v node_modules | grep -v ".d.ts"`
 
 echo "Source compiled to target" | indent
 
