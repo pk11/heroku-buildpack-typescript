@@ -171,10 +171,9 @@ echo "Dependencies installed" | indent
 
 # compile Typescript sources
 echo "-----> Compiling typescript source"
-#this is probably not necessary but it's better to avoid any surprises 
-rm -rf $BUILD_DIR/ts
-mkdir $BUILD_DIR/ts
-#compile tsc files
+mkdir -p $BUILD_DIR/ts
+#compile tsc files  
+
 $CACHE_TARGET_DIR/typescript/bin/tsc --out $BUILD_DIR/ts `find . -name "*.ts" -maxdepth 5 | grep -v node_modules | grep -v ".d.ts"`
 
 echo "Source compiled to target" | indent
