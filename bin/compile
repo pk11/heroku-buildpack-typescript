@@ -176,9 +176,10 @@ mkdir -p $BUILD_DIR/ts
 
 $BUILD_DIR/node_modules/typescript/bin/tsc --out $BUILD_DIR/ts `find . -name "*.ts" -maxdepth 5 | grep -v node_modules | grep -v "\.d.ts"`
 
-echo "-----> Build assets"
+
 if [ -f $BUILD_DIR/build-assets.js ]
 then
+    echo "-----> Building assets"
     env node $BUILD_DIR/build-assets.js
 fi
 
